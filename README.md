@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# Страница выдачи билетов с фильтрами
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание проекта
 
-Currently, two official plugins are available:
+**Страница выдачи билетов с фильтрами** — это веб-приложение для отображения и фильтрации авиабилетов. Пользователи могут выбирать фильтры по количеству пересадок и получать отсортированные по цене билеты.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Основные функции:
 
-## Expanding the ESLint configuration
+- **Отображение билетов:** Рендеринг списка билетов с данными, отсортированными по цене.
+- **Фильтрация билетов:** Фильтрация билетов по количеству пересадок.
+- **Выбор валюты:** Возможность выбора валюты для отображения цены билетов.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Технологический стек:
+- **Frontend:** React, TypeScript, Tailwind CSS
 
-- Configure the top-level `parserOptions` property like this:
+## Установка и настройка
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Клонирование репозитория:**
+    ```bash
+    git clone git@github.com:DariaVor/tickets.git
+    cd tickets
+    ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Запуск проекта:**
+    Для запуска проекта необходимо установить зависимости и запустить приложение:
+    ```bash
+    npm install
+    npm run dev
+    ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Использование
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Выбор валюты
+
+1. Для выбора валюты (RUB, USD, EUR) используйте кнопки в фильтре.
+2. Билеты будут отображаться с ценами, пересчитанными в выбранную валюту.
+
+### Фильтрация по пересадкам
+
+1. В блоке фильтров выберите количество пересадок.
+2. Билеты, соответствующие выбранному количеству пересадок, будут отображены.
